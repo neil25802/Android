@@ -8,34 +8,35 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity  {
 
     private View view;
 
-    TextView tx;
-    Button bt;
+//    TextView tx;
+//    Button bt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.constraintlayout);
 
-        tx = findViewById(R.id.textView);
-        bt = findViewById(R.id.button);
-        bt.setOnClickListener(this);
-        tx.setOnClickListener(this);
+//        tx = findViewById(R.id.textView);
+//        bt = findViewById(R.id.button);
+//        bt.setOnClickListener(this);
+//        tx.setOnClickListener(this);
     }
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.button :
-                tx.setTextColor(Color.YELLOW) ;
-                break;
-            case R.id.textView :
-                tx.setTextColor(Color.BLUE) ;
-                break;
-        }
-    }
+//    implements View.OnClickListener
+//    @Override
+//    public void onClick(View view) {
+//        switch (view.getId()) {
+//            case R.id.button :
+//                tx.setTextColor(Color.YELLOW) ;
+//                break;
+//            case R.id.textView :
+//                tx.setTextColor(Color.BLUE) ;
+//                break;
+//        }
+//    }
 
 
 
