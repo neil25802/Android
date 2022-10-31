@@ -8,60 +8,71 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private View view;
 
-//    TextView tx;
+    TextView theDate, theTime;
 //    Button bt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.constraintlayout);
-
-//        tx = findViewById(R.id.textView);
-//        bt = findViewById(R.id.button);
-//        bt.setOnClickListener(this);
-//        tx.setOnClickListener(this);
+        setContentView(R.layout.bookkeeping_constraintlayout);
+        uiInit();
     }
-//    implements View.OnClickListener
-//    @Override
-//    public void onClick(View view) {
-//        switch (view.getId()) {
-//            case R.id.button :
-//                tx.setTextColor(Color.YELLOW) ;
-//                break;
-//            case R.id.textView :
-//                tx.setTextColor(Color.BLUE) ;
-//                break;
-//        }
-//    }
+    private void uiInit () {
+        theDate = findViewById(R.id.textView3);
+        theTime = findViewById(R.id.textView7);
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        varInit();
+        setUiListener();
+    }
 
+    private void setUiListener() {
+        theDate.setOnClickListener(this);
+        theTime.setOnClickListener(this);
+    }
 
+    private void varInit() {
+    }
 
+    @Override
+    protected void onStop() {
+        releaseUiListener();
+        super.onStop();
+    }
 
+    private void releaseUiListener() {
+        theDate.setOnClickListener(null);
+        theTime.setOnClickListener(null);
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 
-// 哈哈
-//    private View.OnClickListener myClickListener = new View.OnClickListener() {
-//        @Override
-//        public void onClick(View view) {
-//            switch (view.getId()) {
-//                case R.id.button :
-//                    tx.setTextColor(Color.GREEN) ;
-//                    break;
-//                case R.id.textView :
-//                    tx.setTextColor(Color.BLACK) ;
-//                    break;
-//            }
-//        }
-//    };
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
 
-//    public void onButtonClick( View view ) {
-//        tx.setTextColor(Color.RED);
-//    }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
 
+    @Override
+    public void onClick(View view) {
+    }
 }
